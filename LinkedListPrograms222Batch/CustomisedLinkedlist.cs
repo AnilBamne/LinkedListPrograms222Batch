@@ -43,6 +43,36 @@ namespace LinkedListPrograms222Batch
             AddLast(data);
             Console.WriteLine("{0} is appended succesfully",data);
         }
+        //InsertInBetween is used to insert a node between two existing nodes
+        public void InsertInBetween(int data,int firstNode,int lastNode)
+        {
+            Node node=new Node(data);
+            Node temp = head;
+            bool flag = false;
+            if(temp == null)
+            {
+                Console.WriteLine("LinkedList is empty");
+            }
+            else
+            {
+                while(temp != null)
+                {
+                    if(temp.data == firstNode && temp.next.data == lastNode)    //searching the nodes where to insert
+                    {
+                        node.next = temp.next;
+                        temp.next = node;                                       //Insertion done
+                        Console.WriteLine("\n{0} is inserted succesfully",node.data);
+                        flag = true;
+                        break;
+                    }
+                    temp=temp.next;
+                }
+                if (flag == false)                                              //nodes we are looking for are not present.
+                {
+                    Console.WriteLine("*** Insertion failed ***");
+                }
+            }
+        }
 
         public void Display()       //this method displayes the elements in linked list
         {

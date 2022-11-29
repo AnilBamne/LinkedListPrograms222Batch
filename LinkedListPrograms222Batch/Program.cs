@@ -33,6 +33,14 @@ namespace LinkedListPrograms222Batch
                     linkedlist1.Display();
                     break;
                 case 4:
+                    CustomisedLinkedlist linkedlist2=new CustomisedLinkedlist();
+                    linkedlist2.AddLast(56);
+                    linkedlist2.AddLast(70);
+                    Console.WriteLine("Before insertion");
+                    linkedlist2.Display();
+                    linkedlist2.InsertInBetween(30, 56, 70);
+                    Console.WriteLine("After Insertion");
+                    linkedlist2.Display();
                     break;
                 case 5:
                     break;
