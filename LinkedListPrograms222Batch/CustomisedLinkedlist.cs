@@ -38,6 +38,11 @@ namespace LinkedListPrograms222Batch
             head= newNode;
             Console.WriteLine("{0} is added succesfully",newNode.data);
         }
+        public void Append(int data)        //UC3 appending 30 and 70 to 56 ,appending means adding after/last
+        {
+            AddLast(data);
+            Console.WriteLine("{0} is appended succesfully",data);
+        }
 
         public void Display()       //this method displayes the elements in linked list
         {
