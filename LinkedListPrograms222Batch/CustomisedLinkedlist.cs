@@ -9,9 +9,12 @@ namespace LinkedListPrograms222Batch
 {
     internal class CustomisedLinkedlist
     {
+        //globally defining a head of Node class/type
         public Node head;
-        public void AddLast(int data)
+        //this method is used to work like AddLast Method of linkedlist
+        public void AddLast(int data)       //UC1
         {
+            //created a new node 
             Node newNode = new Node(data);
             if (head == null)
             {
@@ -19,7 +22,7 @@ namespace LinkedListPrograms222Batch
             }
             else
             {
-                Node temp = head;
+                Node temp = head;           //defined a temp node 
                 while(temp.next != null)
                 {
                     temp = temp.next;
@@ -27,7 +30,16 @@ namespace LinkedListPrograms222Batch
                 temp.next = newNode;
             }
         }
-        public void Display()
+        //this method is used to work like AddLast Method of linkedlist,adds the node at first position
+        public void AddFirst(int data)      //UC2
+        {
+            Node newNode=new Node(data);
+            newNode.next= head;             //now the new node will have the address of previous head,and the head is initialised with new node.
+            head= newNode;
+            Console.WriteLine("{0} is added succesfully",newNode.data);
+        }
+
+        public void Display()       //this method displayes the elements in linked list
         {
             Node temp=this.head;
             if(temp != null)
