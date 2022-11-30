@@ -85,6 +85,20 @@ namespace LinkedListPrograms222Batch
                     linkedlist6.Display();
                     break;
                 case 9:
+                    CustomisedLinkedlist linkedlist7 = new CustomisedLinkedlist();
+                    linkedlist7.AddLast(56);
+                    linkedlist7.AddLast(30);
+                    linkedlist7.AddLast(70);
+                    Console.WriteLine("Before insertion");
+                    linkedlist7.Display();
+                    linkedlist7.InsertAfterSpecificNode(40, 30);
+                    Console.WriteLine("After insertion");
+                    linkedlist7.Display();
+                    Console.WriteLine("\nDeleting 40");
+                    linkedlist7.DeletSpecificElement(40);
+                    Console.WriteLine("After deletion");
+                    linkedlist7.Display();
+                    linkedlist7.SizeOfLinkedList();
                     break;
                 case 10:
                     break;

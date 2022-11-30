@@ -46,7 +46,7 @@ namespace LinkedListPrograms222Batch
             Console.WriteLine("{0} is appended succesfully",data);
         }
         //InsertInBetween is used to insert a node between two existing nodes
-        public void InsertInBetween(int data,int firstNode,int lastNode)
+        public void InsertInBetween(int data,int firstNode,int lastNode)        //UC4
         {
             Node node=new Node(data);
             Node temp = head;
@@ -77,13 +77,13 @@ namespace LinkedListPrograms222Batch
         }
         //pop method is used for deleting nodes
         //where the address of first element(node) is removed from head and the address of second element(node) is stored in head.next
-        public void PopFirstNode()
+        public void PopFirstNode()                      //UC5 deleting first node
         {
             int node = head.data;
             head = head.next;
             Console.WriteLine("\n >> {0} << is deleted",node);
         }
-        public void PopLastNode()                   //deleting last node
+        public void PopLastNode()                   //UC6 deleting last node
         {
             Node temp = head;
             if (temp.next == null)                  //if lilkedlist has only one element
@@ -104,7 +104,7 @@ namespace LinkedListPrograms222Batch
             }
         }
         //this method is used for searching a perticular node in the linkedlist
-        public void SearchElement(int data)
+        public void SearchElement(int data)     //UC7
         {
             Node temp = head;
             bool flag = false;
@@ -131,7 +131,7 @@ namespace LinkedListPrograms222Batch
             }
         }
         //inserting 40 after 30 in the linked list of 56->30->70
-        public void InsertAfterSpecificNode(int data,int specificElement)
+        public void InsertAfterSpecificNode(int data,int specificElement)       //UC8
         {
             Node node = new Node(data);
             Node temp = head;
@@ -160,6 +160,32 @@ namespace LinkedListPrograms222Batch
                 }
             }
         }
+        //Deleting 40 from LinkedList of 56->30->40->70
+        public void DeletSpecificElement(int data)                      //UC9
+        {
+            Node temp = head;
+            bool flag=false;
+            if (temp.data == data)
+            {
+                head = null;
+                Console.WriteLine("{0} is deleted",data);
+            }
+            else
+            {
+                while (temp.next != null)                                //searching from multiple elements
+                {
+                    if (temp.next.data == data)
+                    {
+                        flag = true;
+                        temp.next = temp.next.next;                     //deleting element
+                        Console.WriteLine("{0} is deleted", data);
+                    }
+                    temp = temp.next;
+                }
+            }
+            if(!flag)
+                Console.WriteLine("{0} element not present in list",data);
+        }
         public void Display()       //this method displayes the elements in linked list
         {
             Node temp=this.head;
@@ -174,8 +200,27 @@ namespace LinkedListPrograms222Batch
             }
             else
             {
-                Console.WriteLine("LinkedList is empty");
+                Console.WriteLine("\nsLinkedList is empty");
             }
+        }
+        //computing the size of limked list
+        public void SizeOfLinkedList()                  //UC9 printing size of linkedlist
+        {
+            int count = 0;
+            Node temp = head;
+            if (temp == null)
+            {
+                Console.WriteLine("\nLinkedList is Empty");
+            }
+            else
+            {
+                while(temp != null)             //Iterating and counting elements present in list
+                {
+                    count++;
+                    temp=temp.next;
+                }
+            }
+            Console.WriteLine("\nLinkedList Size ="+count);
         }
     }
 }
