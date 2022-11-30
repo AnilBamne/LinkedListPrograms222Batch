@@ -7,7 +7,8 @@ namespace LinkedListPrograms222Batch
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To LinkedList Progra");
-            Console.WriteLine("Please choose the option\n1:UC1 create a simple linked list\n2:UC2 add 30 and 56 to 70\n3:UC3 Append 30 and 70 to 56\n4:UC4 Insert 30 between 56 and 70\n5:UC5 Delete first element in 56->30->70");
+            Console.WriteLine("Please choose the option\n1:UC1 create a simple linked list\n2:UC2 add 30 and 56 to 70\n3:UC3 Append 30 and 70 to 56\n4:UC4 Insert 30 between 56 and 70\n5:UC5 Delete first element in 56->30->70" +
+                "\n6:UC6 delete last element of linkedlist\n7:UC7 search node value of 30\n8:Insert 40 after 30 in linkedlist");
             int option=int.Parse(Console.ReadLine());
             switch (option)
             {
@@ -54,6 +55,25 @@ namespace LinkedListPrograms222Batch
                     linkedlist3.Display();
                     break;
                 case 6:
+                    CustomisedLinkedlist linkedlist4 = new CustomisedLinkedlist();
+                    linkedlist4.AddLast(56);
+                    linkedlist4.AddLast(30);
+                    linkedlist4.AddLast(70);
+                    Console.WriteLine("Before deletion");
+                    linkedlist4.Display();
+                    linkedlist4.PopLastNode();
+                    Console.WriteLine("After deletion");
+                    linkedlist4.Display();
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
+                default:
                     break;
             }
         }

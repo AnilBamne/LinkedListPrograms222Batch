@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace LinkedListPrograms222Batch
 {
@@ -80,7 +81,26 @@ namespace LinkedListPrograms222Batch
             int node = head.data;
             head = head.next;
             Console.WriteLine("\n >> {0} << is deleted",node);
-
+        }
+        public void PopLastNode()                   //deleting last node
+        {
+            Node temp = head;
+            if (temp.next == null)                  //if lilkedlist has only one element
+            {
+                int element = temp.data;
+                head = null;
+                Console.WriteLine("\n >> {0} << is deleted", element);
+            }
+            else
+            {
+                while( temp.next.next != null)      //if linkedlist has multiple element
+                {
+                    temp=temp.next;
+                }
+                int element = temp.next.data;
+                temp.next = null;
+                Console.WriteLine("\n >> {0} << is deleted", element);
+            }
         }
         public void Display()       //this method displayes the elements in linked list
         {
