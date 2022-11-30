@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -100,6 +101,33 @@ namespace LinkedListPrograms222Batch
                 int element = temp.next.data;
                 temp.next = null;
                 Console.WriteLine("\n >> {0} << is deleted", element);
+            }
+        }
+        //this method is used for searching a perticular node in the linkedlist
+        public void SearchElement(int data)
+        {
+            Node temp = head;
+            bool flag = false;
+            if(temp == null)
+            {
+                Console.WriteLine("LinkedList is empty");
+            }
+            else
+            {
+                while(temp != null)                             //checking each node
+                {
+                    if(temp.data == data)
+                    {
+                        flag = true;
+                        Console.WriteLine("\n{0} is present in the linkedlist",data);
+                        break;
+                    }
+                    temp = temp.next;
+                }
+            }
+            if (! flag)
+            {
+                Console.WriteLine("\n{0} is not present in the linkedlist", data);
             }
         }
         public void Display()       //this method displayes the elements in linked list
