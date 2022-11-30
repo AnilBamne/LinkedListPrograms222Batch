@@ -130,6 +130,36 @@ namespace LinkedListPrograms222Batch
                 Console.WriteLine("\n{0} is not present in the linkedlist", data);
             }
         }
+        //inserting 40 after 30 in the linked list of 56->30->70
+        public void InsertAfterSpecificNode(int data,int specificElement)
+        {
+            Node node = new Node(data);
+            Node temp = head;
+            bool flag = false;
+            if (temp == null)
+            {
+                Console.WriteLine("LinkedList is empty");
+            }
+            else
+            {
+                while (temp != null)
+                {
+                    if (temp.data == specificElement)    //searching the nodes where to insert
+                    {
+                        node.next = temp.next;
+                        temp.next = node;                                       //Insertion done
+                        Console.WriteLine("\n{0} is inserted succesfully", node.data);
+                        flag = true;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                if (flag == false)                                              //node we are looking for is not present.
+                {
+                    Console.WriteLine("*** Insertion failed ***");
+                }
+            }
+        }
         public void Display()       //this method displayes the elements in linked list
         {
             Node temp=this.head;

@@ -74,6 +74,15 @@ namespace LinkedListPrograms222Batch
                     linkedlist5.SearchElement(30);
                     break;
                 case 8:
+                    CustomisedLinkedlist linkedlist6 = new CustomisedLinkedlist();
+                    linkedlist6.AddLast(56);
+                    linkedlist6.AddLast(30);
+                    linkedlist6.AddLast(70);
+                    Console.WriteLine("Before insertion");
+                    linkedlist6.Display();
+                    linkedlist6.InsertAfterSpecificNode(40, 30);
+                    Console.WriteLine("After insertion");
+                    linkedlist6.Display();
                     break;
                 case 9:
                     break;
