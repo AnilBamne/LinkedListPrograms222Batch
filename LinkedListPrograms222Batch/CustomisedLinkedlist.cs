@@ -73,7 +73,15 @@ namespace LinkedListPrograms222Batch
                 }
             }
         }
+        //pop method is used for deleting nodes
+        //where the address of first element(node) is removed from head and the address of second element(node) is stored in head.next
+        public void PopFirstNode()
+        {
+            int node = head.data;
+            head = head.next;
+            Console.WriteLine("\n >> {0} << is deleted",node);
 
+        }
         public void Display()       //this method displayes the elements in linked list
         {
             Node temp=this.head;

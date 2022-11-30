@@ -43,6 +43,15 @@ namespace LinkedListPrograms222Batch
                     linkedlist2.Display();
                     break;
                 case 5:
+                    CustomisedLinkedlist linkedlist3 =new CustomisedLinkedlist();
+                    linkedlist3.AddLast(56);
+                    linkedlist3.AddLast(30);
+                    linkedlist3.AddLast(70);
+                    Console.WriteLine("Before deletion");
+                    linkedlist3.Display();
+                    linkedlist3.PopFirstNode();
+                    Console.WriteLine("After deletion");
+                    linkedlist3.Display();
                     break;
                 case 6:
                     break;
